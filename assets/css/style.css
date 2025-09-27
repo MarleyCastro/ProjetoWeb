@@ -1,0 +1,194 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #F0941F 0%, #196774 100%);
+    min-height: 100vh;
+}
+
+.main-container {
+    padding: 20px;
+}
+
+.content-wrapper {
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.content-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.title {
+    font-weight: bold;
+    font-size: 2.2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+/* Cores específicas para cada signo */
+.signo-aries {
+    background: linear-gradient(135deg, #ff4757, #ff3742);
+    color: white;
+}
+
+.signo-touro {
+    background: linear-gradient(135deg, #2ed573, #1e90ff);
+    color: white;
+}
+
+.signo-gemeos {
+    background: linear-gradient(135deg, #ffa502, #ff6348);
+    color: white;
+}
+
+.signo-cancer {
+    background: linear-gradient(135deg, #70a1ff, #5352ed);
+    color: white;
+}
+
+.signo-leao {
+    background: linear-gradient(135deg, #ffd700, #ff8c00);
+    color: white;
+}
+
+.signo-virgem {
+    background: linear-gradient(135deg, #26de81, #20bf6b);
+    color: white;
+}
+
+.signo-libra {
+    background: linear-gradient(135deg, #fd79a8, #e84393);
+    color: white;
+}
+
+.signo-escorpiao {
+    background: linear-gradient(135deg, #2d3436, #636e72);
+    color: white;
+}
+
+.signo-sagitario {
+    background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+    color: white;
+}
+
+.signo-capricornio {
+    background: linear-gradient(135deg, #81ecec, #00cec9);
+    color: white;
+}
+
+.signo-aquario {
+    background: linear-gradient(135deg, #74b9ff, #0984e3);
+    color: white;
+}
+
+.signo-peixes {
+    background: linear-gradient(135deg, #fd63c3, #fc427b);
+    color: white;
+}
+
+/* Efeitos adicionais para as caixas de signos */
+.signo-card {
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform: scale(1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.signo-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    transform: rotate(45deg);
+    transition: all 0.3s ease;
+}
+
+.signo-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.signo-card:hover::before {
+    transform: rotate(45deg) translate(20px, 20px);
+}
+
+.signo-nome {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.signo-descricao {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.btn-voltar {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    font-weight: bold;
+    padding: 12px 30px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-voltar:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.8);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Animação de entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.signo-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .signo-nome {
+        font-size: 2rem;
+    }
+
+    .signo-descricao {
+        font-size: 1rem;
+    }
+
+    .signo-card {
+        padding: 20px;
+        margin: 10px;
+    }
+}
